@@ -33,16 +33,3 @@ select = [
 ignore = [
     "E501", # pycodestyle - Line too long
 ]
-
-exclude = [
-    "outputs/",
-    ".mypy_cache/",
-    ".pytest_cache/",
-    ".ruff_cache/",
-    ".venv/",
-    "build/",
-    "dist/",
-    "wheels/",
-    "*.egg-info/",
-    "__pycache__/",
-]
