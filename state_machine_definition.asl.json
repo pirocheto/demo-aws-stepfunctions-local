@@ -1,0 +1,24 @@
+{
+  "Comment": "This state machine is called: LambdaSQSIntegration",
+  "StartAt": "LambdaState",
+  "States": {
+    "LambdaState": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Parameters": {
+        "Payload.$": "$",
+        "FunctionName": "HelloWorldFunction"
+      },
+      "Next": "SQSState"
+    },
+    "SQSState": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::sqs:sendMessage",
+      "Parameters": {
+        "QueueUrl": "https://sqs.us-east-1.amazonaws.com/123456789012/myQueue",
+        "MessageBody.$": "$"
+      },
+      "End": true
+    }
+  }
+}
