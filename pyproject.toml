@@ -10,11 +10,9 @@ dependencies = []
 dev = [
     "boto3-stubs[stepfunctions]>=1.35.77",
     "boto3>=1.35.77",
-    "docker>=7.1.0",
     "mypy>=1.13.0",
     "pytest>=8.3.4",
     "ruff>=0.8.2",
-    "docker-stubs>=0.1.0",
 ]
 
 [tool.mypy]
